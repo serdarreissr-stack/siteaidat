@@ -76,7 +76,7 @@ const daireler = satirlar
 
           <div className="bg-white rounded-2xl shadow-md p-4">
             <h1 className="text-2xl font-bold">
-              Özyılmazlar Apartmanı
+              Öz Yıldırım Apartmanı
             </h1>
 
             <p className="text-gray-600 mt-2">
