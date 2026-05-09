@@ -29,21 +29,35 @@ export default async function Home() {
   console.log(data);
 
 
-const satirlar = data.trim().split("\n");
+const satirlar = data
+  .trim()
+  .split("\n")
+  .map((satir) => satir.replace("\r", ""));
 
-const basliklar = satirlar[0].split(",");
+const basliklar = satirlar[0]
+  .split(",")
+  .map((item) => item.trim());
+
 const gosterilecekAylar = basliklar.slice(1);
-const daireler = satirlar.slice(1).map((satir) => {
-  const kolonlar = satir.split(",");
 
-  return {
-    no: kolonlar[0],
+const daireler = satirlar
+  .slice(1)
+  .map((satir) => {
+    const kolonlar = satir
+      .split(",")
+      .map((item) => item.trim());
 
-    durumlar: kolonlar.slice(1).map(
-      (deger) => deger.trim() === "TRUE"
-    ),
-  };
-});
+    return {
+      no: kolonlar[0],
+
+      durumlar: kolonlar
+        .slice(1)
+        .map(
+          (deger) =>
+            deger === "TRUE"
+        ),
+    };
+  });
 
   const toplamDaire = daireler.length;
 
