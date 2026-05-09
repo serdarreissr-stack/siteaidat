@@ -40,7 +40,7 @@ const daireler = satirlar.slice(1).map((satir) => {
     no: kolonlar[0],
 
     durumlar: kolonlar.slice(1).map(
-      (deger) => deger === "TRUE"
+      (deger) => deger.trim() === "TRUE"
     ),
   };
 });
