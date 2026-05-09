@@ -1,6 +1,9 @@
 async function veriGetir() {
   const response = await fetch(
-    "https://docs.google.com/spreadsheets/d/e/2PACX-1vRuL4uf1ISkCCSptQ_sTxiODW4ofr53Ky6sMjrl4gm1XAiFj1P8yKooh24wddpUx_5oW40ufFsIq8Nw/pub?output=csv"
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRuL4uf1ISkCCSptQ_sTxiODW4ofr53Ky6sMjrl4gm1XAiFj1P8yKooh24wddpUx_5oW40ufFsIq8Nw/pub?output=csv",
+  {
+    cache: "no-store",
+  }
   );
 
   const text = await response.text();
